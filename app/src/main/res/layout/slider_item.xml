@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/banner"
+        android:layout_width="270dp"
+        android:layout_height="135dp"
+        app:riv_corner_radius="4dp"
+        android:src="@drawable/google_play_banner"
+        android:scaleType="centerCrop"
+        />
+
+</android.support.v7.widget.CardView>
