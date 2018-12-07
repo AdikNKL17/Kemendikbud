@@ -11,10 +11,53 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="Logo"
         app:titleTextColor="@color/colorAccent"
         android:background="@color/colorPrimary"
-        android:elevation="2dp"/>
+        app:contentInsetStart="20dp"
+        app:contentInsetEnd="20dp"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="18sp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/profile"
+                android:layout_marginRight="20dp"
+                app:riv_corner_radius="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_search"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:selectableItemBackground"/>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/profile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                app:riv_corner_radius="12dp"
+                app:riv_mutate_background="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lisa_blackpink"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/wrapper"
@@ -22,6 +65,7 @@
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_nav"
         android:layout_below="@id/toolbar"
+        android:background="@color/colorBg"
         android:overScrollMode="never">
 
         <LinearLayout
@@ -37,8 +81,99 @@
                 android:layout_height="wrap_content"
                 app:riv_corner_radius="4dp"
                 android:src="@drawable/google_play_banner"
-                android:scaleType="centerCrop"
-                />
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:id="@+id/recent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/title_recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="Top Categories"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/more_recent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="MORE"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_categories"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/recommended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/title_recommended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="Recommended for You"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/more_recommended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="MORE"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/container_recommended"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list_recommended"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    android:nestedScrollingEnabled="false"
+                    tools:ignore="UnusedAttribute">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
