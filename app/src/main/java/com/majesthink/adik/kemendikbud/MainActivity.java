@@ -4,13 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.View;
 
 import com.majesthink.adik.kemendikbud.adapter.CategoriesAdapter;
+import com.majesthink.adik.kemendikbud.adapter.NewestAdapter;
 import com.majesthink.adik.kemendikbud.adapter.RecommendedAdapter;
 import com.majesthink.adik.kemendikbud.adapter.SliderAdapter;
 import com.majesthink.adik.kemendikbud.model.Categories;
+import com.majesthink.adik.kemendikbud.model.Newest;
 import com.majesthink.adik.kemendikbud.model.Recommended;
 import com.majesthink.adik.kemendikbud.model.Slider;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -23,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private List<Slider> sliderList = new ArrayList<>();
     private List<Categories> categoriesList = new ArrayList<>();
     private List<Recommended> recommendedList = new ArrayList<>();
+    private List<Newest> newestList = new ArrayList<>();
     SliderAdapter sliderAdapter;
     CategoriesAdapter categoriesAdapter;
     RecommendedAdapter recommendedAdapter;
-    RecyclerView sliderItem, categoriesItem, recommendedItem;
+    NewestAdapter newestAdapter;
+    RecyclerView sliderItem, categoriesItem, recommendedItem, newestItem;
     /*RoundedImageView searchMenu;*/
     /*SimpleSearchView searchView;*/
 
@@ -38,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         sliderItem = findViewById(R.id.banner_slider);
         categoriesItem = findViewById(R.id.list_categories);
         recommendedItem = findViewById(R.id.list_recommended);
+        newestItem = findViewById(R.id.list_newest);
 
     /*    searchMenu = findViewById(R.id.menu_search);*/
 
@@ -47,13 +54,42 @@ public class MainActivity extends AppCompatActivity {
                 searchView.showSearch();
             }
         });*/
-
         loadSlider();
         loadCategories();
+        loadNewest();
         loadRecommended();
         dataSlider();
         dataCategories();
         dataRecommended();
+        dataNewest();
+    }
+
+    private void dataNewest() {
+
+        Newest newest = new Newest(0, "http://www.iosicongallery.com/icons/stripe-dashboard-2018-10-03/512.png","Stripe","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+        newest = new Newest(0, "https://www.iosicongallery.com/icons/webcam-world-view-2018-11-01/512.png","Webcam","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+        newest = new Newest(0, "https://media.langtze.com/Musixmatch%20Lyrics%20Finder-icon.png!icon512","Musixmatch","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+        newest = new Newest(0, "https://www.iosicongallery.com/icons/instagram-2016-05-12/512.png","Instagram","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+        newest = new Newest(0, "https://i.pinimg.com/originals/10/20/bf/1020bfe0f639f7206ad6cfba7176179e.png","Words","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+        newest = new Newest(0, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201809210816","Apple","Stripe Inc", 4.5, 10);
+        newestList.add(newest);
+
+    }
+
+    private void loadNewest() {
+
+        newestAdapter = new NewestAdapter(this, newestList);
+        newestItem.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        newestItem.setItemAnimator(new DefaultItemAnimator());
+        int padding = getResources().getDimensionPixelSize(R.dimen.slider_margin);
+        newestItem.addItemDecoration(new SliderItemDecoration(padding));
+        newestItem.setAdapter(newestAdapter);
+
     }
 
     private void loadRecommended() {
@@ -73,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
 
         int margin = getResources().getDimensionPixelSize(R.dimen.slider_margin);
         sliderItem.addItemDecoration(new SliderItemDecoration(margin));
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(sliderItem);
 
     }
 
@@ -123,13 +162,18 @@ public class MainActivity extends AppCompatActivity {
 
         Recommended recommended = new Recommended(0, "http://www.iosicongallery.com/icons/stripe-dashboard-2018-10-03/512.png","Stripe","Stripe Inc", 4.5, 10);
         recommendedList.add(recommended);
-        recommended = new Recommended(0, "https://cfcdnpull-creativefreedoml.netdna-ssl.com/wp-content/uploads/2015/06/Twitter-bird-white-blue2.png","Twitter","Twitter Inc", 4.5, 10);
+        recommended = new Recommended(0, "https://cfcdnpull-creativefreedoml.netdna-ssl.com/wp-content/uploads/2015/06/Twitter-bird-white-blue2.png","Twitter","Twitter Inc", 4.1, 10);
         recommendedList.add(recommended);
-        recommended = new Recommended(0, "http://whisper.sh/img/whisper-square-appicon@3x.png","Sum and Math","Edu Inc", 4.5, 10);
+        recommended = new Recommended(0, "http://whisper.sh/img/whisper-square-appicon@3x.png","Sum and Math","Edu Inc", 4.0, 10);
         recommendedList.add(recommended);
-        recommended = new Recommended(0, "https://pbs.twimg.com/profile_images/655055033659183104/ryWP6nnJ_400x400.png","Smart Home","Smart Inc", 4.5, 10);
+        recommended = new Recommended(0, "https://pbs.twimg.com/profile_images/655055033659183104/ryWP6nnJ_400x400.png","Smart Home","Smart Inc", 4.7, 10);
         recommendedList.add(recommended);
-
+        recommended = new Recommended(0, "https://cfcdnpull-creativefreedoml.netdna-ssl.com/wp-content/uploads/2015/06/Twitter-bird-white-blue2.png","Twitter","Twitter Inc", 4.1, 10);
+        recommendedList.add(recommended);
+        recommended = new Recommended(0, "http://whisper.sh/img/whisper-square-appicon@3x.png","Sum and Math","Edu Inc", 4.0, 10);
+        recommendedList.add(recommended);
+        recommended = new Recommended(0, "https://pbs.twimg.com/profile_images/655055033659183104/ryWP6nnJ_400x400.png","Smart Home","Smart Inc", 4.7, 10);
+        recommendedList.add(recommended);
     }
 
 }

@@ -21,6 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/logo"
+                android:layout_centerVertical="true"/>
+
             <TextView
                 android:id="@+id/app_title"
                 android:layout_width="wrap_content"
@@ -28,7 +35,9 @@
                 android:text="@string/app_name"
                 android:textSize="18sp"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/logo"/>
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:layout_width="24dp"
@@ -117,6 +126,46 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/list_categories"
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:id="@+id/newest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/title_newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="Newest Application"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/more_newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/circular_std_book"
+                    android:text="MORE"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_newest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"

@@ -36,6 +36,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
         Picasso.get()
                 .load(categoriesList.get(i).getCATEGORIES_ICON())
+                .resize(128, 128)
                 .into(categoriesHolder.categories_icon);
     }
 
