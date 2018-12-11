@@ -11,10 +11,11 @@
                            shape requires the <stroke> element to define the width of the line.
                     ring : A ring shape.
         -->
-        <shape android:shape="oval">
+        <shape android:shape="rectangle">
             <solid android:color="@color/colorAccent"/>
             <!-- Set the same value for both width and height to get a circular shape -->
             <size android:width="60dp" android:height="60dp"/>
+            <corners android:radius="4dp"/>
         </shape>
     </item>
 </selector>

@@ -66,17 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void dataNewest() {
 
-        Newest newest = new Newest(0, "http://www.iosicongallery.com/icons/stripe-dashboard-2018-10-03/512.png","Stripe","Stripe Inc", 4.5, 10);
+        Newest newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2009/FIS012009.jpg","Aku Tahu, Alat Transportasi! ","Stripe Inc", 4.5, 10);
         newestList.add(newest);
-        newest = new Newest(0, "https://www.iosicongallery.com/icons/webcam-world-view-2018-11-01/512.png","Webcam","Stripe Inc", 4.5, 10);
+        newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2010/FIS032010.jpg","Kombinasi","Stripe Inc", 4.5, 10);
         newestList.add(newest);
-        newest = new Newest(0, "https://media.langtze.com/Musixmatch%20Lyrics%20Finder-icon.png!icon512","Musixmatch","Stripe Inc", 4.5, 10);
+        newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2012/ME12PAUD02.jpg","Siklus Krebs","Stripe Inc", 4.5, 10);
         newestList.add(newest);
-        newest = new Newest(0, "https://www.iosicongallery.com/icons/instagram-2016-05-12/512.png","Instagram","Stripe Inc", 4.5, 10);
+        newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2013/ME13ABAHMA01.jpg","Cita - Citaku","Stripe Inc", 4.5, 10);
         newestList.add(newest);
-        newest = new Newest(0, "https://i.pinimg.com/originals/10/20/bf/1020bfe0f639f7206ad6cfba7176179e.png","Words","Stripe Inc", 4.5, 10);
+        newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2013/ME13AIPABI01.jpg","Words","Stripe Inc", 4.5, 10);
         newestList.add(newest);
-        newest = new Newest(0, "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201809210816","Apple","Stripe Inc", 4.5, 10);
+        newest = new Newest(0, "https://m-edukasi.kemdikbud.go.id/medukasi/res/icon-produk/me/me2012/ME12PAUD10.jpg","Apple","Stripe Inc", 4.5, 10);
         newestList.add(newest);
 
     }

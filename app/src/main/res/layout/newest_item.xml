@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorAccent"
-        app:riv_corner_radius="30dp"
+        app:riv_corner_radius="4dp"
         app:riv_mutate_background="true"
         android:src="@drawable/c_icon"/>
 
