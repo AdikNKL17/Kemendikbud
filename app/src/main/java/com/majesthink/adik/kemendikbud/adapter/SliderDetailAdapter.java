@@ -38,6 +38,8 @@ public class SliderDetailAdapter extends RecyclerView.Adapter<SliderDetailAdapte
 
         Picasso.get()
                 .load(sliderDetailList.get(i).getSLIDER_IMG())
+                .fit()
+                .centerCrop()
                 .into(categoriesHolder.slider_img);
     }
 

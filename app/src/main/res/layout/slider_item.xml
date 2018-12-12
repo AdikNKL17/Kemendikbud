@@ -3,14 +3,14 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="4dp">
+    app:cardCornerRadius="4dp"
+    android:elevation="4dp">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/banner"
         android:layout_width="270dp"
         android:layout_height="135dp"
         app:riv_corner_radius="4dp"
-        android:src="@drawable/google_play_banner"
         android:scaleType="centerCrop"
         />
 

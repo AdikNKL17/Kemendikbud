@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.majesthink.adik.kemendikbud.DetailActivity;
-import com.majesthink.adik.kemendikbud.MainActivity;
+import com.majesthink.adik.kemendikbud.activity.DetailActivity;
 import com.majesthink.adik.kemendikbud.R;
 import com.majesthink.adik.kemendikbud.model.Recommended;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -38,7 +37,8 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
 
         Picasso.get()
                 .load(recommendedList.get(i).getApp_icon())
-                .resize(300, 300)
+                .fit()
+                .centerCrop()
                 .into(recommendedHolder.appIcon);
 
         recommendedHolder.appName.setText(recommended.getApp_name());

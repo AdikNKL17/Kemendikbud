@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/explore"
-        android:title="Explore"
-        android:icon="@drawable/ic_explore"/>
+        android:id="@+id/jelajah"
+        android:title="Jelajah"
+        android:icon="@drawable/ic_explore"
+        app:showAsAction="withText"/>
 
     <item
-        android:id="@+id/categories"
-        android:title="Categories"
-        android:icon="@drawable/ic_categorize"/>
+        android:id="@+id/kategori"
+        android:title="Kategori"
+        android:icon="@drawable/ic_categorize"
+        app:showAsAction="withText"/>
 
     <item
-        android:id="@+id/download"
-        android:title="Download"
-        android:icon="@drawable/ic_download"/>
+        android:id="@+id/pelajaran"
+        android:title="Pelajaran"
+        android:icon="@drawable/ic_book"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/jenjang"
+        android:title="Jenjang"
+        android:icon="@drawable/ic_class"
+        app:showAsAction="withText"/>
 
 
 </menu>

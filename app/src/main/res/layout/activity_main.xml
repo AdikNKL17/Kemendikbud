@@ -1,293 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBg"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"
-        app:contentInsetEnd="20dp"
-        app:contentInsetStart="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/colorAccent">
+        android:layout_marginBottom="8dp"
+        app:elevation="4dp">
 
-        <RelativeLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimary"
+            app:contentInsetEnd="20dp"
+            app:contentInsetStart="20dp"
+            app:elevation="0dp"
+            app:layout_scrollFlags="scroll|snap"
+            app:titleTextColor="@color/colorAccent">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/logo" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/app_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_toRightOf="@id/logo"
-                android:text="@string/app_name"
-                android:textColor="@color/colorAccent"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/logo" />
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:layout_toLeftOf="@id/profile"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:selectableItemBackground"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_search"
-                app:riv_corner_radius="12dp" />
+                <TextView
+                    android:id="@+id/app_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/logo"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/profile"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@color/colorAccent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/lisa_blackpink"
-                app:riv_corner_radius="12dp"
-                app:riv_mutate_background="true" />
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@id/profile"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:selectableItemBackground"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search"
+                    app:riv_corner_radius="12dp" />
 
-        </RelativeLayout>
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profile"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/colorAccent"
+                    android:scaleType="centerCrop"
+                    app:riv_corner_radius="12dp"
+                    app:riv_mutate_background="true" />
 
-    </android.support.v7.widget.Toolbar>
+            </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/wrapper"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_above="@id/bottom_nav"
-        android:layout_below="@id/toolbar"
-        android:background="@color/colorBg"
-        android:overScrollMode="never"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        </android.support.v7.widget.Toolbar>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/content"
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:descendantFocusability="blocksDescendants"
-            android:orientation="vertical">
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorAccent"
+            app:elevation="0dp"
+            app:itemIconTint="@drawable/bottom_navigation_colors"
+            app:itemTextColor="@drawable/bottom_navigation_colors"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:menu="@menu/bottom_navigation" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/banner_slider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/google_play_banner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:riv_corner_radius="4dp" />
-
-            <!--<RelativeLayout
-                android:id="@+id/recent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">-->
-
-            <TextView
-                android:id="@+id/title_recent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:fontFamily="@font/circular_std_book"
-                android:text="Top Categories"
-                android:textColor="@color/colorBlack"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/banner_slider" />
-
-            <TextView
-                android:id="@+id/more_recent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:clickable="true"
-                android:fontFamily="@font/circular_std_book"
-                android:text="MORE"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/banner_slider" />
-
-            <!--</RelativeLayout>-->
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list_categories"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/more_recent">
-
-            </android.support.v7.widget.RecyclerView>
-
-            <!--<RelativeLayout
-                android:id="@+id/newest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">-->
-
-            <TextView
-                android:id="@+id/title_newest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/circular_std_book"
-                android:text="Newest Application"
-                android:textColor="@color/colorBlack"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/list_categories" />
-
-            <TextView
-                android:id="@+id/more_newest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:clickable="true"
-                android:fontFamily="@font/circular_std_book"
-                android:text="MORE"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/list_categories" />
-
-            <!--   </RelativeLayout>-->
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list_newest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_newest">
-
-            </android.support.v7.widget.RecyclerView>
-            <!--
-             <RelativeLayout
-                android:id="@+id/recommended"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">-->
-
-            <TextView
-                android:id="@+id/title_recommended"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/circular_std_book"
-                android:text="Recommended for You"
-                android:textColor="@color/colorBlack"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/list_newest" />
-
-            <!--         </RelativeLayout>-->
-
-            <!--<RelativeLayout
-                android:id="@+id/container_recommended"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">-->
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list_recommended"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="false"
-                android:scrollbars="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_recommended"
-                tools:ignore="UnusedAttribute">
-
-            </android.support.v7.widget.RecyclerView>
-
-            <TextView
-                android:id="@+id/more_recommended"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:clickable="true"
-                android:fontFamily="@font/circular_std_book"
-                android:text="MORE"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/list_newest" />
+    </android.support.design.widget.AppBarLayout>
 
 
-            <!--</RelativeLayout>-->
-
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>
-
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_nav"
+    <FrameLayout
+        android:id="@+id/fragment_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:elevation="2dp"
-        app:itemIconTint="@drawable/bottom_navigation_colors"
-        app:itemTextColor="@drawable/bottom_navigation_colors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_nav"
+        android:layout_below="@id/toolbar"
+        android:overScrollMode="never"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
-</android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

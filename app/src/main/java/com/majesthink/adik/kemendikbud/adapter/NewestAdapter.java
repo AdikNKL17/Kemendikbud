@@ -10,10 +10,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.majesthink.adik.kemendikbud.DetailActivity;
+import com.majesthink.adik.kemendikbud.activity.DetailActivity;
 import com.majesthink.adik.kemendikbud.R;
 import com.majesthink.adik.kemendikbud.model.Newest;
-import com.majesthink.adik.kemendikbud.model.Recommended;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +37,8 @@ public class NewestAdapter extends RecyclerView.Adapter<NewestAdapter.NewestHold
 
         Picasso.get()
                 .load(newestList.get(i).getApp_icon())
-                .resize(300, 300)
+                .fit()
+                .centerCrop()
                 .into(newestHolder.appIcon);
 
         newestHolder.appName.setText(newest.getApp_name());

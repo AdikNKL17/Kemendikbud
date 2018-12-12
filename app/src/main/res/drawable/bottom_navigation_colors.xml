@@ -4,9 +4,9 @@
 
     <item
         android:state_checked="true"
-        android:color="@color/colorAccent"
+        android:color="@color/colorPrimary"
          />
     <item
         android:state_checked="false"
-        android:color="@color/colorGray"/>
+        android:color="@color/colorAccentDark"/>
 </selector>

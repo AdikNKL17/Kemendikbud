@@ -47,8 +47,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_heart_outline" />
-                            <entry key="sourceFile" value="C:\Users\MerapiUnity\Documents\icon app store\Heart Outline.svg" />
+                            <entry key="outputName" value="ic_class" />
+                            <entry key="sourceFile" value="C:\Users\MerapiUnity\Documents\icon app store\Class.svg" />
                           </map>
                         </option>
                       </PersistentState>

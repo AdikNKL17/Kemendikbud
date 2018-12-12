@@ -35,6 +35,8 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderHold
 
         Picasso.get()
                 .load(sliderList.get(i).getSLIDER_THUMBNAIL())
+                .fit()
+                .centerCrop()
                 .into(sliderHolder.sliderImage);
     }
 
